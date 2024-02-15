@@ -169,7 +169,7 @@ export default function DisplayIcons({ isFilterBoxOfDisplayCliked }) {
               }}
             >
               {displayIcons.length !== 0 ? displayIcons.map((elem,index) => (
-                <IconsDisplayinBox key={index+elem.name} icon={elem.icon} />
+                <IconsDisplayinBox key={index+elem.iconName} icon={elem.icon} />
               )) : <NoIcons />}
             </Box>
           </Box>

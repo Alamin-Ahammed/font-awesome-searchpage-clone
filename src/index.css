@@ -29,7 +29,6 @@
 .fadeIn { 
     opacity: 1;
     animation: fadein 0.3s ease-in-out;
-    /* font-family:Arial, Helvetica, sans-serif; */
 }
 
 @keyframes fadein {
