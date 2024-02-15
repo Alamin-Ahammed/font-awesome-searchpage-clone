@@ -60,7 +60,6 @@ function LargeMenuItem({ icon, menuName }) {
       ) === undefined &&
       isMenuClicked
     ) {
-      console.log('remove')
       setIsMenuClicked(false);
     }
   }, [FilterDataAndIconData, setFilterDataAndIconData]);

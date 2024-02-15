@@ -1,11 +1,11 @@
-import { Container } from "@mui/material";
-import React from "react";
+import { Container, Typography } from "@mui/material";
+import { flex } from "../../styleObject";
 
 function ComingSoon({ pageName }) {
   return (
-    <Container maxWidth='xl' sx={{height: '80%'}}>
-      <div>{pageName}</div>
-      <div>ComingSoon....</div>
+    <Container maxWidth='xl' sx={{height: '60vh',...flex,flexDirection: 'column'}}>
+      <Typography variant="h1">{pageName}</Typography>
+      <Typography variant="h3">ComingSoon....</Typography>
     </Container>
   );
 }

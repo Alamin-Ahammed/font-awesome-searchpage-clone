@@ -3,7 +3,7 @@ import { FaRegSquare } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
 import { FaRegCheckSquare } from "react-icons/fa";
 import { flex } from "../../styleObject";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFilterData } from "../../Context/FilterDataAndIconDataStorage";
 import { ResetAll } from "../../CustomHooks/useIsOutsideClicked/ResetAllFilter";
 
@@ -12,7 +12,7 @@ export default function Filter({
 }) {
   const [isMouseOver, setIsMouseOver] = useState(false);
   const [isMouseClicked, setIsMouseClicked] = useState(false);
-  const { setFilterDataAndIconData } = useFilterData();
+  const { FilterDataAndIconData, setFilterDataAndIconData } = useFilterData();
   const handleMouseIn = () => {
     setIsMouseOver(true);
   };
@@ -35,6 +35,17 @@ export default function Filter({
           };
     });
   };
+
+  useEffect(() => {
+    if (
+      Object.keys(FilterDataAndIconData).find(
+        (item) => item === filterName.toLowerCase()
+      ) === undefined &&
+      isMouseClicked
+    ) {
+      setIsMouseClicked(false);
+    }
+  }, [FilterDataAndIconData, setFilterDataAndIconData]);
 
   // reseting all the filter data to normal
   ResetAll(() => setIsMouseClicked(false));

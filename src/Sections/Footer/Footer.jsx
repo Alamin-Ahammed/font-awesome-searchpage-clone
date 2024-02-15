@@ -45,8 +45,6 @@ function Footer() {
           "@media (max-width: 767px)": {
             flexDirection: "column",
           },
-          position: 'relative',
-          bottom: '0px',
         }}
       >
         <Container

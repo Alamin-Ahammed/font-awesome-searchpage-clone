@@ -15,7 +15,7 @@ function SearchBar() {
   const [isSearchBarFocused, setIsSearchBarFocused] = useState(true);
   const [isOutsideClicked, setIsOutsideClick] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const { setFilterDataAndIconData } = useFilterData();
+  const { FilterDataAndIconData, setFilterDataAndIconData } = useFilterData();
   const stylesOfThisPage = {
     outline: {
       borderRadius: "2rem",
@@ -82,6 +82,7 @@ function SearchBar() {
 
   useIsOutsideClicked(outlineBoxRef, () => {
     setIsSearchBarFocused(false);
+    setInputValue('')
   });
 
   const handleFocus = () => {
