@@ -37,7 +37,6 @@ function LargeMenuItem({ icon, menuName }) {
       // { {neededProperty is exerted} , {rest of the properties remains same} }= distructure
       const { [menuName.toLowerCase()]: removedMenu, ...updatedFilterData } =
         previousFilterData;
-      console.log(previousFilterData);
 
       return removedMenu
         ? updatedFilterData
