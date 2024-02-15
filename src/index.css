@@ -1,0 +1,52 @@
+*{
+    font-family: 'roboto',Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.active {
+    color: #609EE0 !important;
+}
+
+.css-1k51tf5-MuiTooltip-tooltip {
+    background-color: #183153 !important;
+    border-radius: 2px !important;
+    min-width: 50px !important;
+    height: 25px !important;
+    font-size: 0.8rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 1000 !important;
+} 
+
+.css-1k51tf5-MuiTooltip-tooltip > * {
+    color: #183153 !important;
+}
+
+.fadeIn { 
+    opacity: 1;
+    animation: fadein 0.3s ease-in-out;
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+  @media screen and (max-width: 540px ) {
+    body{
+        transform: scale(0.8);
+    }
+  }
+  @media screen and (max-width: 415px ) {
+    body{
+        transform: scale(0.7);
+    }
+  }
