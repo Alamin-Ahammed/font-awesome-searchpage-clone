@@ -9,8 +9,12 @@ function LargeMenuItem({ icon, menuName }) {
   const [isOutsideClicked, setIsOutsideClick] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   // this is for changing the filter data to manage in display which icon should be appeared.
-  const { setFilterDataAndIconData, isResetClicked, setIsResetClicked } =
-    useFilterData();
+  const {
+    FilterDataAndIconData,
+    setFilterDataAndIconData,
+    isResetClicked,
+    setIsResetClicked,
+  } = useFilterData();
   const dynamicStyle = {
     color: "#146EBE",
     fill: "#146EBE",
@@ -49,6 +53,17 @@ function LargeMenuItem({ icon, menuName }) {
 
   // resetting all the filter in this page was clicked
   ResetAll(() => setIsMenuClicked(false));
+  useEffect(() => {
+    if (
+      Object.keys(FilterDataAndIconData).find(
+        (item) => item === menuName.toLowerCase()
+      ) === undefined &&
+      isMenuClicked
+    ) {
+      console.log('remove')
+      setIsMenuClicked(false);
+    }
+  }, [FilterDataAndIconData, setFilterDataAndIconData]);
 
   return (
     <Box

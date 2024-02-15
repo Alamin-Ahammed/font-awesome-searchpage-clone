@@ -1,12 +1,13 @@
 import { Button, SvgIcon } from "@mui/material";
 import { RxCross2 } from "react-icons/rx";
 import { useFilterData } from "../../Context/FilterDataAndIconDataStorage";
+import { ResetAllProvider } from "../../Context/ResetButton";
 
 export default function FilterTagButtonWithXIcon({ tagName }) {
-  const {FilterDataAndIconData,setFilterDataAndIconData} = useFilterData();
+  const { FilterDataAndIconData, setFilterDataAndIconData } = useFilterData();
   const handleClick = () => {
-    // Creating a new object without the specified property to remove that 
-    const updatedFilterData = Object.values(FilterDataAndIconData).reduce(
+    // Creating a new object without the specified property to remove that
+    const updatedFilterData = Object.keys(FilterDataAndIconData).reduce(
       (result, key) => {
         if (key !== tagName) {
           result[key] = FilterDataAndIconData[key];
