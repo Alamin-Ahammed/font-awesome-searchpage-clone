@@ -26,7 +26,6 @@ export default function Filter({
       // { {neededProperty is exerted} , {rest of the properties remains same} }= distructure
       const { [filterName.toLowerCase()]: removedMenu, ...updatedFilterData } =
         previousFilterData;
-      console.log(previousFilterData);
 
       return removedMenu
         ? updatedFilterData

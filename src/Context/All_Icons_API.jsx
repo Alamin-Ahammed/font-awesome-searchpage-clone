@@ -13,7 +13,7 @@ export const All_Icons_API_Provider = ({ children }) => {
     }
     return svgData.filter((item) => {
       return Object.keys(FilterDataAndIconData).every((key) => {
-        const filterValue = FilterDataAndIconData[key].toLowerCase();
+        const filterValue = FilterDataAndIconData[key]?.toLowerCase();
         const iconValue = item[key]?.toLowerCase();
 
         // Checking if the filter property is 'name' tehn performing partial match
