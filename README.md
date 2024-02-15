@@ -1,6 +1,13 @@
-# React + Vite
+# Font Awesome Clone
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1>How to run?</h1>
+clone git
+open git bash and run command
+npm
+npm run dev
+
+<h1>To The Project check this link please-</h1>
 
 Currently, two official plugins are available:
 
