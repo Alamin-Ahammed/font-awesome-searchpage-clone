@@ -11,8 +11,8 @@ import { RxCross2 } from "react-icons/rx";
 import { useIsOutsideClicked } from "../../CustomHooks/useIsOutsideClicked/useIsOutsideClicked";
 
 function Header() {
-  const [isLogoHovered, setIsLogoHovered] = useState(false);
   const [isLogOutHovered, setIsLogOutHovered] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const [IsShowHamburgarMenu, setIsShowHamburgarMenu] = useState(false);
   const LogoBoxRef = useRef(null);

@@ -11,16 +11,19 @@ import "@fontsource/roboto/700.css";
 import { FilterDataAndIconDataStorageProvider } from "./Context/FilterDataAndIconDataStorage.jsx";
 import { CssBaseline } from "@mui/material";
 import { All_Icons_API_Provider } from "./Context/All_Icons_API.jsx";
+import { ResetAllProvider } from "./Context/ResetButton.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CssBaseline />
-    <FilterDataAndIconDataStorageProvider>
-      <All_Icons_API_Provider>
-        <RouterProvider router={router}>
-          <App />
-        </RouterProvider>
-      </All_Icons_API_Provider>
-    </FilterDataAndIconDataStorageProvider>
+    <ResetAllProvider>
+      <FilterDataAndIconDataStorageProvider>
+        <All_Icons_API_Provider>
+          <RouterProvider router={router}>
+            <App />
+          </RouterProvider>
+        </All_Icons_API_Provider>
+      </FilterDataAndIconDataStorageProvider>
+    </ResetAllProvider>
   </React.StrictMode>
 );

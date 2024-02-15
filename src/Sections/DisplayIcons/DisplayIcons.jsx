@@ -11,6 +11,7 @@ import { useFilterData } from "../../Context/FilterDataAndIconDataStorage";
 import FilterTagButtonWithXIcon from "../../Components/FilterTagButtonWithXIcon/FilterTagButtonWithXIcon";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useAll_Icons_API } from "../../Context/All_Icons_API";
+import NoIcons from "../../Components/NoIcons/NoIcons";
 
 export default function DisplayIcons({ isFilterBoxOfDisplayCliked }) {
   const { AllIcons } = useAll_Icons_API();
@@ -167,9 +168,9 @@ export default function DisplayIcons({ isFilterBoxOfDisplayCliked }) {
                 width: "100%",
               }}
             >
-              {displayIcons.map((elem,index) => (
+              {displayIcons.length !== 0 ? displayIcons.map((elem,index) => (
                 <IconsDisplayinBox key={index+elem.name} icon={elem.icon} />
-              ))}
+              )) : <NoIcons />}
             </Box>
           </Box>
         </Box>

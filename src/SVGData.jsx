@@ -47,14 +47,14 @@ export const SVGData = [
     },
     {
       name: 'grid',
-      icon: <HiViewGrid />,
+      icon: <HiViewGrid style={{fontSize: '1.5rem'}} />,
       solid: "solid",
       free: 'free',
       classic: 'classic',
     },
     {
       name: "plane",
-      icon: <IoAirplaneSharp />,
+      icon: <IoAirplaneSharp style={{fontSize: '1.5rem'}} />,
       sharp: "sharp",
       free: 'free',
       solid: 'solid',
@@ -75,20 +75,20 @@ export const SVGData = [
     },
     {
       name: "list",
-      icon: <FaListUl />,
+      icon: <FaListUl style={{fontSize: '1.5rem'}} />,
       regular: "regular",
       free: 'free',
       sponsor: 'sponsor'
     },
     {
       name: "grid3",
-      icon: <BsGrid3X3GapFill />,
+      icon: <BsGrid3X3GapFill style={{fontSize: '1.5rem'}} />,
       light: "light",
       brands: 'brands'
     },
     {
       name: "doller",
-      icon: <AiFillDollarCircle />,
+      icon: <AiFillDollarCircle style={{fontSize: '1.5rem'}}  />,
       brands: "brands",
       accessibillity: 'accessibillity',
       free: 'free',
@@ -97,12 +97,12 @@ export const SVGData = [
     },
     {
       name: "heart",
-      icon: <FaHeart />,
+      icon: <FaHeart style={{fontSize: '1.5rem'}} />,
       filter: "New in v6",
     },
     {
       name: "SVG14",
-      icon: <FaCircle />,
+      icon: <FaCircle style={{fontSize: '1.5rem'}} />,
       brands: "brands",
       accessibillity: 'accessibillity',
       free: 'free',
@@ -110,7 +110,7 @@ export const SVGData = [
     },
     {
       name: "grid",
-      icon: <AiFillAlert />,
+      icon: <AiFillAlert style={{fontSize: '1.5rem'}} />,
       alert: "alert",
       free: 'free',
       regular: 'regular',

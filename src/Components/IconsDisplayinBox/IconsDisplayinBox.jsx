@@ -18,7 +18,7 @@ export default function IconsDisplayinBox({ icon }) {
         }}
       >
         {icon ? (
-          <SvgIcon sx={{ fontSize: "3rem" }}>{icon}</SvgIcon>
+          <SvgIcon sx={{ fontSize: "3rem", }}>{icon}</SvgIcon>
         ) : (
           <SvgIcon sx={{ fontSize: "3rem" }}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
