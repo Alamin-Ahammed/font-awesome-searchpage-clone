@@ -6,7 +6,7 @@ export default function FilterTagButtonWithXIcon({ tagName }) {
   const {FilterDataAndIconData,setFilterDataAndIconData} = useFilterData();
   const handleClick = () => {
     // Creating a new object without the specified property to remove that 
-    const updatedFilterData = Object.keys(FilterDataAndIconData).reduce(
+    const updatedFilterData = Object.values(FilterDataAndIconData).reduce(
       (result, key) => {
         if (key !== tagName) {
           result[key] = FilterDataAndIconData[key];

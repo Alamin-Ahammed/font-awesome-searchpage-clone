@@ -121,7 +121,6 @@ function Header() {
     hamburgarMenu: {
       display: IsShowHamburgarMenu ? "block" : "none",
       position: "relative",
-      // top: "3rem",
       top: 0,
       left: "1.5rem",
       width: "92%",
