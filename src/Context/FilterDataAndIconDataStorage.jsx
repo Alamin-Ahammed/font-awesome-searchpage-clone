@@ -6,7 +6,6 @@ export const FilterDataAndIconDataStorageProvider = ({ children }) => {
   
   const [FilterDataAndIconData, setFilterDataAndIconData] = useState({});
   const [isResetClicked, setIsResetClicked] = useState(false);
-  console.log(FilterDataAndIconData)
   return (
     <Storage.Provider
       value={{
