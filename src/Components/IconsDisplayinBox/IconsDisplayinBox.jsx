@@ -1,10 +1,94 @@
-import { Box, SvgIcon } from "@mui/material";
+import { Box, Modal, SvgIcon, Typography } from "@mui/material";
 import { flex } from "../../styleObject";
+import { useState } from "react";
+import { HiMiniXCircle } from "react-icons/hi2";
 
 export default function IconsDisplayinBox({ icon }) {
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    maxWidth: "82%",
+    width: "82%",
+    height: "88%",
+    bgcolor: "background.paper",
+    p: 4,
+    ...flex,
+    "@media (max-width: 1151px)": {
+      flexDirection: "column",
+    },
+
+    "@media (max-width: 767px)": {
+      p: "1rem",
+      height: "600px",
+    },
+    "@media (max-width: 541px)": {
+      height: "420px",
+      top: "25%",
+    },
+  };
   return (
     <>
+      <Modal
+        open={openModal}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <SvgIcon
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              right: "-10px",
+              top: "-10px",
+              background: "#fff",
+              borderRadius: "50%",
+            }}
+          >
+            <HiMiniXCircle style={{ color: "#183153" }} />
+          </SvgIcon>
+          <Box
+            sx={{
+              ...flex,
+              boxShadow:
+                "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
+              maxWidth: "500px",
+              width: "100%",
+              height: "400px",
+              flex: "1 1",
+              borderRadius: "1rem",
+              "@media (max-width: 541px)": {
+                height: "200px",
+              },
+            }}
+          >
+            <SvgIcon
+              sx={{
+                fontSize: "10rem",
+                "*": { color: "#1E3050", fill: "#1E3050" },
+              }}
+            >
+              {icon}
+            </SvgIcon>
+          </Box>
+
+          <Box sx={{ flex: "1 1", p: "4rem" }}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              This Part is Coming Soon.....
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Developed By Alamin Ahammed
+            </Typography>
+          </Box>
+        </Box>
+      </Modal>
       <Box
+        onClick={handleOpen}
         sx={{
           height: "168px",
           borderRadius: "1rem",
@@ -18,7 +102,7 @@ export default function IconsDisplayinBox({ icon }) {
         }}
       >
         {icon ? (
-          <SvgIcon sx={{ fontSize: "3rem", }}>{icon}</SvgIcon>
+          <SvgIcon sx={{ fontSize: "3rem" }}>{icon}</SvgIcon>
         ) : (
           <SvgIcon sx={{ fontSize: "3rem" }}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
