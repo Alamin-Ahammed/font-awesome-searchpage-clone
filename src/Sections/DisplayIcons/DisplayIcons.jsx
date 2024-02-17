@@ -12,6 +12,7 @@ import FilterTagButtonWithXIcon from "../../Components/FilterTagButtonWithXIcon/
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useAll_Icons_API } from "../../Context/All_Icons_API";
 import NoIcons from "../../Components/NoIcons/NoIcons";
+import { useViewStyle } from "../../Context/ViewStyle";
 
 export default function DisplayIcons({ isFilterBoxOfDisplayCliked }) {
   const { AllIcons } = useAll_Icons_API();
@@ -20,12 +21,24 @@ export default function DisplayIcons({ isFilterBoxOfDisplayCliked }) {
     useFilterData();
   const filterTagArray = Object.keys(FilterDataAndIconData);
   const isLargeScreen = useMediaQuery("(min-width: 1151px)");
+  // this is for changing the viewstyle of icons roomy to compact or ChatsSheet
+  const { viewStyle } = useViewStyle();
+  const viewStyleNameAndWidth = [
+    { viewName: "Roomy", width: "168px", height: "168px" },
+    { viewName: "Compact", width: "120px", height: "120px" },
+    { viewName: "ChatsSheet", width: "190px", height: "48px" },
+  ];
+
+  const selectedViewStyle = viewStyleNameAndWidth.find(
+    (elem) => elem.viewName === viewStyle
+  );
+  console.log(selectedViewStyle.height);
 
   return (
     <>
       <Container maxWidth={"xl"} sx={{ bgcolor: "#F0F1F3" }} disableGutters>
         <Box
-          maxWidth={"1090px"}
+          maxWidth={"1190px"}
           sx={{
             marginInline: "auto",
             display: "flex",
@@ -93,7 +106,7 @@ export default function DisplayIcons({ isFilterBoxOfDisplayCliked }) {
           <Box
             sx={{
               maxWidth: "820px",
-              flex: "1 1 807px",
+              flex: "1 1 820px",
               "@media (max-width: 1151px)": {
                 maxWidth: "820px",
                 width: "100%",
@@ -161,16 +174,28 @@ export default function DisplayIcons({ isFilterBoxOfDisplayCliked }) {
             <Box
               sx={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(168px, 1fr))",
-                gridTemplateRows: "repeat(auto-fit, minmax(168px, 1fr))", // for ensuring square boxes
-                gap: "23px",
+                gridTemplateColumns: `repeat(auto-fit, minmax(${selectedViewStyle.width}, 1fr))`,
+                gridTemplateRows: `repeat(auto-fit, minmax(${selectedViewStyle.height}, 1fr))`, // for ensuring square boxes
+                gap: viewStyle === "Roomy" ? "23px" : "17px",
                 my: "24px",
                 width: "100%",
               }}
             >
-              {displayIcons.length !== 0 ? displayIcons.map((elem,index) => (
-                <IconsDisplayinBox key={index+elem.iconName} icon={elem.icon} />
-              )) : <NoIcons />}
+              {displayIcons.length !== 0 ? (
+                displayIcons.map((elem, index) => (
+                  <IconsDisplayinBox
+                    key={index + elem.iconName}
+                    icon={elem.icon}
+                    height={
+                      viewStyle === "ChatsSheet"
+                        ? selectedViewStyle.height
+                        : "168px"
+                    }
+                  />
+                ))
+              ) : (
+                <NoIcons />
+              )}
             </Box>
           </Box>
         </Box>
