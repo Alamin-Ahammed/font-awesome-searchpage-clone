@@ -2,9 +2,11 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 <h1>Used Technologies :</h1>
-<h2>React</h2>
-<h2>Material UI</h2>
-<h2>React Icons</h2>
+<ul>
+  <li>React</li>
+<li>Material UI</li>
+<li>React Icons</li>
+</ul>
 <h1>How to run?</h1>
 clone git
 <div> Open git bash and run these commands</div>
